@@ -41,7 +41,7 @@ Example output format: MUST BE A PYTHON DICTIONARY
     "Document Code" : "123456"
 }
 """
-* You MUST find the values of all the above elements except of the Ammonium Nitrogen and the Sulfur
+
 
 Instructions:
 You must not create an intro or outro, just give the above info ONLY.

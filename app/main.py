@@ -23,23 +23,33 @@ def load_prompt(filename):
         return file.read()
 
 
+# ignore the warnings
+warnings.filterwarnings("ignore")
+
 # Define the input/output files
 current_dir = os.path.dirname(__file__)
 resource_dir = os.path.join(current_dir, '..', 'resource')
 outputs_dir = os.path.join(current_dir, '..', 'outputs')
 
-input_file_path = os.path.join(resource_dir,'Soilanalysis-38-Zannias','108','240438-zannias-kephales-bio.pdf')
+
+#input_file_path = os.path.join(resource_dir,'Soilanalysis-38-Zannias','108','240438-zannias-kephales-bio.pdf')
+#input_file_path = os.path.join(resource_dir,'ΕΔΑΦΟΣ ΤΟΠΟΘ ΚΑΣΑΠΑΚΗΣ','ΕΔΑΦΟΣ ΤΟΠΟΘ 1 20221103 114361 (1).pdf')
+#input_file_path = os.path.join(resource_dir,'ΕΔΑΦΟΣ ΤΟΠΟΘ ΚΑΣΑΠΑΚΗΣ','ΕΔΑΦΟΣ ΤΟΠΟΘ 2 20221103 114362 (1).pdf')
+#input_file_path = os.path.join(resource_dir,'ΕΔΑΦΟΣ ΤΟΠΟΘ ΚΑΣΑΠΑΚΗΣ','ΕΔΑΦΟΣ ΤΟΠΟΘ 7 20221103 114363 (1).pdf')
+input_file_path = os.path.join(resource_dir,'ΕΔΑΦΟΣ ΤΟΠΟΘ ΚΑΣΑΠΑΚΗΣ','ΕΔΑΦΟΣ ΤΟΠΟΘ 9 20221103 114364 (1).pdf')
+#input_file_path = os.path.join(resource_dir,'ΕΔΑΦΟΣ ΤΟΠΟΘ ΚΑΣΑΠΑΚΗΣ','SoilAnalysis-Kasapakis_1_merge.pdf')
 response_file = os.path.join(outputs_dir, 'SOIL_ANALYSIS_RES.txt')
 text_output_file = os.path.join(outputs_dir, 'SOIL_ANALYSIS_TEXT.txt')
 
 
 if __name__ == "__main__":
+
+    
     translator = Translator()
     file_parser = File_parser()
-    warnings.filterwarnings("ignore")
 
     # Load the prompt
-    prompt = load_prompt(os.path.join(resource_dir, 'prompt.txt'))
+    prompt = load_prompt(os.path.join(resource_dir, 'prompt_2.txt'))
 
     BaseLLM.predict = patched_predict
 
